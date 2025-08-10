@@ -1,0 +1,120 @@
+.header {
+    position: relative;
+    top: -27px;
+    height: 34vw;
+    min-height: 300px;
+    margin: 30px auto;
+    background: url('../../../public/food.jpg') no-repeat center center;
+    background-size: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+     /* Added for better aesthetics */
+}
+
+/* Blur effect for the background image */
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit;
+    background-size: cover;
+    filter: blur(2px); /* Adjust blur intensity as needed */
+    z-index: 1;
+}
+
+/* Dark overlay for better text contrast */
+.header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4); /* Dark overlay */
+    z-index: 2;
+}
+
+.header-contents {
+    position: relative; /* Changed from absolute to relative */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5vw;
+    max-width: 50%;
+    padding: 5%; /* Better spacing */
+    color: white;
+    z-index: 3; /* Ensure content appears above effects */
+    height: 100%;
+    justify-content: flex-end;
+    padding-bottom: 10%;
+    animation: fadeIn 2s ; /* Added fade-in animation */
+}
+
+.header-contents h2 {
+    font-weight: 500;
+    font-size: max(4.5vw, 22px);
+    margin: 0;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Better text readability */
+}
+
+/* Optional: Add animation for the blur effect */
+.header:hover::before {
+    filter: blur(6px); /* Increased blur on hover */
+    transition: filter 0.3s ease;
+}
+
+.header-contents button {
+  border: none; /* Fixed typo from 'nonw' to 'none' */
+  color: #000000; /* Changed from rgb(1,1,1) to standard black */
+  font-weight: 600; /* Increased from 500 for better visibility */
+  padding: 12px 24px; /* Changed from vw units to fixed padding */
+  background-color: white;
+  font-size: 16px; /* Fixed size instead of viewport-based */
+  border-radius: 50px;
+  cursor: pointer; /* Added pointer cursor */
+  transition: all 0.3s ease; /* Smooth hover transition */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow */
+  text-transform: uppercase; /* Optional: makes text uppercase */
+  letter-spacing: 0.5px; /* Better typography */
+}
+
+/* Hover state */
+.header-contents button:hover {
+  background-color: #f8f8f8; /* Slightly darker on hover */
+  transform: translateY(-2px); /* Lift effect */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15); /* Enhanced shadow on hover */
+}
+
+/* Active state */
+.header-contents button:active {
+  transform: translateY(0); /* Push down effect when clicked */
+}
+
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .header {
+        height: 50vw;
+        margin: 20px auto;
+        top: -10px; /* Adjusted for mobile */
+    }
+    
+    .header-contents {
+        max-width: 80%; /* More space for text on mobile */
+        padding-bottom: 15%;
+    }
+}
+
+@media (max-width: 480px) {
+    .header::before {
+        filter: blur(2px); /* Less blur on small devices */
+    }
+    
+    .header-contents h2 {
+        font-size: max(5vw, 18px);
+    }
+}

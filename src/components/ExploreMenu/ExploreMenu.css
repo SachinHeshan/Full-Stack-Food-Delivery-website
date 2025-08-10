@@ -1,0 +1,111 @@
+/* ExploreMenu.css */
+
+.explore-menu {
+    padding: -50px 20px;
+    text-align: center;
+    background-color: #fff; /* Adjust background color as needed */
+}
+
+.explore-menu h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: #333; /* Adjust text color as needed */
+}
+
+.explore-menu-text {
+    font-size: 1.1rem;
+    color: #000000;
+    max-width: 800px;
+    margin: 0 auto 30px;
+    line-height: 1.6;
+}
+
+.explore-menu-list {
+    cursor: pointer;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr); /* 5 items per row */
+    gap: -20px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.explore-menu-list-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.explore-menu-list-item:hover {
+    transform: translateY(-5px);
+}
+
+.menu-item-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Makes the image circular */
+    object-fit: cover;
+    /* Optional border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+}
+
+.explore-menu-list-item h3 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.explore-menu-list-item p {
+    font-size: 0.9rem;
+    color: #666;
+    text-align: center;
+    line-height: 1.4;
+}
+
+.menu-divider {
+    border: none;
+    height: 1px;
+    background-color: #eee;
+    margin: 40px auto;
+    width: 80%;
+}
+
+.explore-menu-list-item.active {
+  border: 10px solid tomato;
+  padding: 10px;
+}
+
+
+
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .explore-menu-list {
+        grid-template-columns: repeat(4, 1fr); /* 4 items per row on smaller screens */
+    }
+}
+
+@media (max-width: 900px) {
+    .explore-menu-list {
+        grid-template-columns: repeat(3, 1fr); /* 3 items per row on tablets */
+    }
+}
+
+@media (max-width: 600px) {
+    .explore-menu-list {
+        grid-template-columns: repeat(2, 1fr); /* 2 items per row on mobile */
+    }
+    
+    .menu-item-image {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+@media (max-width: 400px) {
+    .explore-menu-list {
+        grid-template-columns: 1fr; /* 1 item per row on very small screens */
+    }
+}
