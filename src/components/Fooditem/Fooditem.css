@@ -1,0 +1,131 @@
+/* Fooditem.css */
+.food-item {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: white;
+  margin: 0 auto;
+}
+
+.food-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.food-item-img-container {
+  width: 100%;
+  height: 180px;
+  position: relative;
+  overflow: hidden;
+}
+
+.food-item-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.food-item:hover .food-item-img {
+  transform: scale(1.05);
+}
+
+.food-item-info {
+  padding: 16px;
+}
+
+.food-item-name-rating {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.food-item-name-rating p {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.food-item-name-rating img {
+  width: 80px;
+  height: 15px;
+  object-fit: contain;
+}
+
+.food-item-description {
+  color: #666;
+  font-size: 0.9rem;
+  margin: 8px 0 12px;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.food-item-price {
+  color: #ff6b6b;
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.add-icon {
+  position: absolute;
+  top: 0%;
+  right: 0px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  transition: all 0.2s ease;
+ /* Ensures it stays above other elements */
+}
+
+
+.add-icon:hover {
+  transform: scale(1.1);
+  
+}
+
+.food-item-counter {
+  position: absolute;
+  top: 10px;       /* Positions at top instead of bottom */
+  right: 10px;     /* Slightly inset from edge */
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 25px;
+  padding: 3px 8px; /* Slightly smaller padding */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  z-index: 2;
+}
+.counter-btn {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  padding: 5px;
+}
+
+.counter-btn:hover {
+  transform: scale(1.1);
+}
+
+.add-btn {
+  
+  border-radius: 50%;
+}
+
+.counter-value {
+  font-weight: bold;
+  min-width: 20px;
+  text-align: center;
+}

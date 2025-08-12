@@ -1,0 +1,51 @@
+/* Fooddisplay.css */
+
+.food-display {
+    margin: 2rem 0;
+    padding: 0 1rem;
+}
+
+.food-display h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #333;
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.food-display h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: #ff6b6b;
+    margin: 0.5rem auto 0;
+}
+
+.food-display-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 0 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .food-display-list {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .food-display {
+        padding: 0 0.5rem;
+    }
+    
+    .food-display-list {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 0;
+    }
+}
