@@ -14,16 +14,16 @@ const ExploreMenu = ({ category, setCategory }) => {
                 {menu_list.map((item, index) => (
                     <div 
                         key={index} 
-                        className={`explore-menu-list-item ${category === item.menu_name ? "active":""}`}
-                        onClick={() => setCategory(prev => prev === item.menu_name ? "All": item.menu_name)}
+                        className={`explore-menu-list-item ${category === item.category ? "active":""}`}
+                        onClick={() => setCategory(prev => prev === item.category ? "All": item.category)}
                     >
                         <img
                             className="menu-item-image"
                             src={item.menu_image} 
-                            alt={item.menu_name} 
+                            alt={item.category} 
                             loading="lazy"
                         />
-                        <h3>{item.menu_name}</h3>
+                        <h3>{item.category}</h3>
                     </div>
                 ))}
             </div>

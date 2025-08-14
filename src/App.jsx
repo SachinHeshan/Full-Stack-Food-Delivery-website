@@ -6,6 +6,7 @@ import Home from './Pages/Home/home.jsx'
 import Cart from './Pages/cart/cart.jsx'
 import PlaceOrder from './Pages/placeorder/placeorder.jsx'
 import Header from './components/Header/header.jsx'  // Changed to capital H
+import Footer from './components/Footer/Footer.jsx'
 
 
 function App() {
@@ -19,6 +20,8 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/placeorder" element={<PlaceOrder />} />
       </Routes>
+     
+      <Footer />  {/* Added Footer component here */}
     </>
   )
 }
