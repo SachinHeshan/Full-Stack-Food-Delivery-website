@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './navbar.css';
 import { FaSearch, FaUser } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [activeMenu, setActiveMenu] = useState("home");
@@ -17,27 +18,26 @@ const Navbar = () => {
         <div className="navbar-links">
           <a 
             href="/" 
-            className={activeMenu === "home" ? "navbar-link active" : "navbar-link"}
-            onClick={() => setActiveMenu("home")}
+            className={activeMenu === "home" ? "navbar-link active" : "navbar-link"} onClick={() => setActiveMenu("home")}
           >
             Home
           </a>
           <a 
-            href="/menu" 
+            href='#explore-menu' 
             className={activeMenu === "menu" ? "navbar-link active" : "navbar-link"}
             onClick={() => setActiveMenu("menu")}
           >
             Menu
           </a>
           <a 
-            href="/app" 
+            href='#app-download'
             className={activeMenu === "mobile-app" ? "navbar-link active" : "navbar-link"}
             onClick={() => setActiveMenu("mobile-app")}
           >
             Mobile App
           </a>
           <a 
-            href="/contact" 
+            href='#footer'
             className={activeMenu === "contact" ? "navbar-link active" : "navbar-link"}
             onClick={() => setActiveMenu("contact")}
           >

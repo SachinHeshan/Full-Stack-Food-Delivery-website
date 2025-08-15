@@ -146,7 +146,7 @@ export const food_list = [
     },
     {
         _id: "food6",
-        food_image: "https://images.unsplash.com/photo-1546069901-1d6c3f1e9b1a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+        food_image: "https://www.hipmamasplace.com/wp-content/uploads/2021/06/199259152_166663622165057_6223652316946896551_n.jpg",
         food_name: "Fruit Salad",
         price: 7,
         category: "salads",
@@ -156,7 +156,7 @@ export const food_list = [
     },
     {
         _id: "food7",
-        food_image: "https://images.unsplash.com/photo-1546069901-1d6c3f1e9b1a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+        food_image: "https://desireerd.com/wp-content/uploads/2024/06/Spinach-Berry-Salad-3-250x250.jpg",
         food_name: "Spinach Salad",
         price: 8,
         category: "salads",
@@ -276,7 +276,7 @@ export const food_list = [
     // Pure Veg (2)
     {
         _id: "food18",
-        food_image: "https://images.unsplash.com/photo-1546069901-1d6c3f1e9b1a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+        food_image: "https://img.taste.com.au/kUVCKnrN/taste/2016/11/indian-style-vegetable-curry-59371-1.jpeg",
         food_name: "Vegetable Curry",
         price: 10,
         category: "pure vegs",
@@ -305,17 +305,8 @@ export const food_list = [
         description: "Stir-fried noodles with vegetables.",
         rating: 4.6,
         rating_count: 97
-    },
-    {
-        _id: "food21",
-        food_image: "https://images.unsplash.com/photo-1559847844-5315695dadae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-        food_name: "Udon Noodles",
-        price: 13,
-        category: "noodles",
-        description: "Thick Japanese noodles in broth.",
-        rating: 4.7,
-        rating_count: 84
     }
+  
 ];
 const rating = "frontend/src/assets/rating.png";
 
@@ -324,3 +315,5 @@ export const rating_star = "https://cdn-icons-png.flaticon.com/128/10801/1080139
 export const add_icon = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmcodSAtIXafKUinbJYZiaHGz1SAINoYQ-RA&s";
 export const remove_icon = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuPZJ_r6LjUR1N_xKhlGgHQ2Ng18NHi4UGag&s";
 export const logo = "https://img.pikbest.com/png-images/20241111/-22creative-food-logo-collection-for-culinary-brands-22_11079861.png!sw800";
+export const playstore = "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/2560px-Google_Play_Store_badge_EN.svg.png";
+export const appstore = "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Download_on_the_App_Store_Badge.svg/2560px-Download_on_the_App_Store_Badge.svg.png";
