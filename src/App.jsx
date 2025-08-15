@@ -1,29 +1,31 @@
-import React from 'react'
-import Navbar from './components/navbar/navbar.jsx'
-import { BsBootstrap } from 'react-icons/bs'
-import { Route, Routes } from 'react-router-dom'
-import Home from './Pages/Home/home.jsx'
-import Cart from './Pages/cart/cart.jsx'
-import PlaceOrder from './Pages/placeorder/placeorder.jsx'
-import Header from './components/Header/header.jsx'  // Changed to capital H
-import Footer from './components/Footer/Footer.jsx'
+import React, { useState } from 'react'; // Added useState import from react
+import { Routes, Route } from 'react-router-dom'; // Added Routes import
+import Navbar from './components/Navbar/Navbar.jsx';
+import Home from './Pages/Home/home.jsx';
+import Cart from './Pages/cart/cart.jsx';
+import PlaceOrder from './Pages/placeorder/placeorder.jsx';
+import Header from './components/Header/header.jsx';
+import Footer from './components/Footer/Footer.jsx';
+import LoginPopup from './components/LoginPopup/LoginPopup.JSX';
 
+const App = () => {
+  const [showLogin, setShowLogin] = useState(false);
 
-function App() {
   return (
     <>
-      <Navbar />
-      <Header />  {/* Added Header component here */}
+      {showLogin?<LoginPopup setShowLogin={setShowLogin}/>:<></>}
+      <Navbar setShowLogin={setShowLogin} />
+      
       
       <Routes>
-        <Route path="/" element={<Home />} />  {/* Changed /home to / for main route */}
+        <Route path="/" element={<Home />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/placeorder" element={<PlaceOrder />} />
       </Routes>
      
-      <Footer />  {/* Added Footer component here */}
+      <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

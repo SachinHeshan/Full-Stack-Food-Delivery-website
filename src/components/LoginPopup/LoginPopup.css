@@ -1,0 +1,252 @@
+/* Login Popup Overlay */
+.login-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(3px);
+}
+
+/* Login Popup Container */
+.login-popup {
+  position: relative;
+  background-color: white;
+  padding: 35px;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 420px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  animation: popIn 0.3s ease-out;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0.95) translateY(10px);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Header Section */
+.login-popup-header {
+  margin-bottom: 25px;
+  text-align: center;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  background: white;
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #666;
+  transition: all 0.2s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.close-btn:hover {
+  color: #ff6b6b;
+  transform: rotate(90deg);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+.login-popup h2 {
+  color: #333;
+  font-size: 1.8rem;
+  margin-bottom: 0;
+  font-weight: 600;
+}
+
+/* Name Input Field (Sign Up Only) */
+.login-popup-input {
+  margin-bottom: 5px;
+}
+
+.login-popup-input input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: all 0.3s;
+  background-color: #f9f9f9;
+}
+
+.login-popup-input input:focus {
+  outline: none;
+  border-color: #ff6b6b;
+  box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.15);
+  background-color: white;
+}
+
+.login-popup-input input::placeholder {
+  color: #aaa;
+}
+
+/* Form Elements */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 0.95rem;
+  color: #555;
+  font-weight: 500;
+  margin-left: 2px;
+}
+
+.form-group input {
+  padding: 14px 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: all 0.3s;
+  background-color: #f9f9f9;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #ff6b6b;
+  box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.15);
+  background-color: white;
+}
+
+/* Submit Button */
+.submit-btn {
+  padding: 15px;
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-top: 5px;
+  letter-spacing: 0.5px;
+}
+
+.submit-btn:hover {
+  background-color: #ff5252;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(255, 82, 82, 0.25);
+}
+
+/* Terms Checkbox */
+.login-popup-condition {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 10px 0 5px;
+}
+
+.login-popup-condition input[type="checkbox"] {
+  min-width: 18px;
+  height: 18px;
+  accent-color: #ff6b6b;
+  margin-top: 2px;
+  cursor: pointer;
+}
+
+.login-popup-condition label {
+  font-size: 0.82rem;
+  color: #666;
+  cursor: pointer;
+  line-height: 1.4;
+}
+
+/* Toggle Auth State */
+.toggle-auth-state {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.toggle-auth-state p {
+  color: #666;
+  font-size: 0.92rem;
+  margin: 0;
+}
+
+.toggle-auth-state span {
+  color: #ff6b6b;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-left: 5px;
+}
+.login-popup-input label {
+  display: block;
+  
+  color: #000000;
+  margin-bottom: 5px;
+}
+
+.toggle-auth-state span:hover {
+  color: #ff5252;
+  text-decoration: underline;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 480px) {
+  .login-popup {
+    padding: 28px 22px;
+    border-radius: 14px;
+  }
+  
+  .login-popup h2 {
+    font-size: 1.6rem;
+  }
+  
+  .form-group input,
+  .login-popup-input input {
+    padding: 12px 14px;
+  }
+  
+  .submit-btn {
+    padding: 14px;
+  }
+  
+  .close-btn {
+    top: -12px;
+    right: -12px;
+    width: 32px;
+    height: 32px;
+  }
+}
+
+@media (max-width: 360px) {
+  .login-popup {
+    padding: 25px 18px;
+  }
+  
+  .login-popup h2 {
+    font-size: 1.5rem;
+  }
+}
