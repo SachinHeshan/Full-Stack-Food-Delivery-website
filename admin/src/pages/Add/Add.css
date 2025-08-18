@@ -1,0 +1,176 @@
+/* Add.
+css */
+.add {
+   
+  margin-left: 250px; /* Match sidebar width */
+  padding: 2rem;
+  min-height: 100vh;
+  background-color: #f8f9fa;
+  display: flex;
+  justify-content: center;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 800px;
+  gap: 1.5rem;
+}
+
+/* Image Upload Section */
+.add-img-upload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.add-img-upload p {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.add-img-upload label {
+  cursor: pointer;
+  width: 250px;
+  height: 250px;
+  border: 2px dashed #ccc;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+.add-img-upload label:hover {
+  border-color: #4CAF50;
+  background-color: #f0fff0;
+}
+
+.add-img-upload img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+/* Form Fields */
+.add-product-name,
+.add-product-description,
+.add-category,
+.add-price {
+  width: 100%;
+}
+
+.add-product-name p,
+.add-product-description p,
+.add-category p,
+.add-price p {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #444;
+  margin-bottom: 0.5rem;
+}
+
+.add input[type="text"],
+.add input[type="number"],
+.add textarea,
+.add select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #fff;
+  transition: all 0.3s;
+}
+
+.add input[type="text"]:focus,
+.add input[type="number"]:focus,
+.add textarea:focus,
+.add select:focus {
+  outline: none;
+  border-color: #4CAF50;
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+}
+
+.add textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+/* Category and Price Row */
+.add-category-parice {
+  display: flex;
+  gap: 2rem;
+  width: 100%;
+}
+
+.add-category,
+.add-price {
+  flex: 1;
+}
+
+.add select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1rem;
+  padding-right: 2.5rem;
+}
+
+/* Submit Button */
+.add-btc {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 0.875rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-top: 1rem;
+  width: 100%;
+  max-width: 200px;
+  align-self: center;
+}
+
+.add-btc:hover {
+  background-color: #45a049;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .add {
+    margin-left: 0;
+    padding: 1.5rem;
+  }
+  
+  .add-category-parice {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .add-img-upload label {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .add {
+    padding: 1rem;
+  }
+  
+  .flex-col {
+    gap: 1.25rem;
+  }
+}
