@@ -15,7 +15,7 @@ const StoreContextProvider = (props) => {
             ...prev,
             [itemId]: (prev[itemId] || 0) + 1,
         }));
-        
+
         if (token) {
             try {
                 const response = await axios.post(
