@@ -5,12 +5,28 @@ import { StoreContext } from '../../context/StoreContext';
 
 
 const Fooditem = ({ id, name, price, description, image }) => {
-  const { cartItems, addToCart, removeFromCart } = useContext(StoreContext);
+  const { cartItems, addToCart, removeFromCart, url } = useContext(StoreContext);
+  
+  // Debug logging
+  console.log('Fooditem props:', { id, name, price, description, image });
+  console.log('URL:', url);
+  console.log('Full image URL:', url + "/uploads/" + image);
 
   return (
     <div className="food-item">
       <div className="food-item-img-container">
-        <img className="food-item-img" src={image} alt={name} />
+        <img 
+          className="food-item-img" 
+          src={url+"/uploads/"+image} 
+          alt={name}
+          onError={(e) => {
+            console.error('Image failed to load:', e.target.src);
+            e.target.style.display = 'none';
+          }}
+          onLoad={() => {
+            console.log('Image loaded successfully:', url+"/uploads/"+image);
+          }}
+        />
         {!cartItems[id] ? (
           <img
             className="add-icon"

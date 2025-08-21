@@ -1,11 +1,11 @@
-/* Navbar Styles */
+/* navbar.css */
 .navbar {
   background-color: #fff;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  padding: 1rem 2rem;
+  padding: 1.2rem 0;
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 1000;
 }
 
 .navbar-container {
@@ -14,193 +14,238 @@
   align-items: center;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 2rem;
 }
 
 .navbar-logo {
-  width: 150px;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 0.6rem;
+  text-decoration: none;
 }
 
 .navbar-logo img {
-  height: 40px;
-  width: 150px;
+  height: 45px;
+  width: auto;
 }
 
 .navbar-logo span {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #ff6b6b;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #ff5a5f;
 }
 
 .navbar-links {
   display: flex;
-  list-style: none;
-  gap: 20px;
-  font-size: 18px;
-  color:#49557e 
+  gap: 2.2rem;
 }
 
 .navbar-link {
   text-decoration: none;
   color: #333;
-  font-weight: 500;
+  font-weight: 600;
   transition: color 0.3s;
-  cursor: pointer;
+  position: relative;
+  font-size: 1.1rem;
 }
 
-.navbar-link:hover {
-  color: #ff6b6b;
+.navbar-link:hover,
+.navbar-link.active {
+  color: #ff5a5f;
+}
+
+.navbar-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #ff5a5f;
 }
 
 .navbar-actions {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1.2rem;
 }
 
+.navbar-cart,
 .navbar-search {
+  width: 50px;
+  height: 50px;
   background: none;
   border: none;
-  font-size: 1.2rem;
-  color: #333;
   cursor: pointer;
-  transition: color 0.3s;
-  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: all 0.3s;
+  color: #333;
+  font-size: 1.1rem;
 }
-
-.navbar-search:hover {
-  color: #ff6b6b;
-}
-
 
 .navbar-cart {
-  right: 10px;
-  height: -10px;
-  width: -10px;
+  padding: 0.4rem; /* Slightly smaller padding for cart */
+}
 
-  background: none;
-  border: none;
+.navbar-cart:hover,
+.navbar-search:hover {
+  background-color: #f5f5f5;
+  transform: scale(1.05);
+}
+
+.cart-icon {
   position: relative;
-  cursor: pointer;
-
-}
-.navbar-cart img {
-  height: 30px;
-  width: 30px;
-}
-.navbar-cart:hover {
-  color: #ff5252;
+  display: flex;
 }
 
-.navbar-link.active {
-  padding-bottom: 2px;
-  border-bottom: 2px solid #ff6b6b;
-  
+.cart-icon img {
+  width: 35px; /* Slightly smaller cart icon */
+  height: 35px;
+}
+
+.cart-count {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background-color: #ff5a5f;
+  color: white;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+
+.profile-container {
+  position: relative;
 }
 
 .navbar-signin {
   display: flex;
   align-items: center;
-  gap: 8px;
-  background-color: #ff6b6b;
+  gap: 0.6rem;
+  padding: 0.6rem 1.2rem;
+  background-color: #ff5a5f;
   color: white;
   border: none;
-  padding: 0.6rem 1.2rem;
-  border-radius: 30px;
-  font-weight: 600;
+  border-radius: 6px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  font-size: 1rem;
 }
 
 .navbar-signin:hover {
-  background-color: #ff5252;
-
+  background-color: #e14a4f;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Mobile Cart Badge */
-.cart-badge {
+.profile-dropdown {
   position: absolute;
-  top: -8px;
-  right: -8px;
-  background-color: #ff6b6b;
-  color: white;
-  border-radius: 50%;
-  width: 20px;
-  height: 20px;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 0.6rem 0;
+  min-width: 200px;
+  z-index: 1001;
+  margin-top: 0.6rem;
+  animation: fadeIn 0.2s ease-in-out;
+  border: 1px solid #eaeaea;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdown-item {
   display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: 12px;
-  font-weight: bold;
+  gap: 0.8rem;
+  width: 100%;
+  padding: 0.8rem 1.2rem;
+  background: none;
+  border: none;
+  text-decoration: none;
+  color: #333;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
 }
 
-/* Responsive Styles */
-@media (max-width: 992px) {
-  .navbar-links {
-    position: fixed;
-    top: 80px;
-    left: -100%;
-    width: 100%;
-    height: calc(100vh - 80px);
-    background-color: #fff;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 2rem 0;
-    gap: 2rem;
-    transition: left 0.3s ease;
-    z-index: 99;
-  }
-
-  .navbar-links.active {
-    left: 0;
-  }
-
-  .navbar-menu {
-    display: block;
-  }
-
-  .navbar-actions {
-    gap: 1rem;
-  }
+.dropdown-item:hover {
+  background-color: #f5f5f5;
 }
 
+.dropdown-icon {
+  color: #666;
+  width: 18px;
+  height: 18px;
+}
+
+/* Responsive design */
 @media (max-width: 768px) {
-  .navbar {
-    padding: 1rem;
+  .navbar-container {
+    padding: 0 1.2rem;
+    flex-wrap: wrap;
   }
-
-  .navbar-logo {
-    width: 120px;
+  
+  .navbar-links {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    margin-top: 1rem;
+    gap: 1.2rem;
   }
-
-  .navbar-logo img {
-    height: 35px;
-  }
-
+  
   .navbar-logo span {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
   }
-
-  .navbar-signin {
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
+  
+  .navbar-link {
+    font-size: 1rem;
   }
 }
 
 @media (max-width: 480px) {
-  .navbar-logo span {
+  .navbar-links {
+    flex-wrap: wrap;
+    gap: 0.8rem;
+  }
+  
+  .navbar-link {
+    font-size: 0.9rem;
+  }
+  
+  .navbar-signin span {
     display: none;
   }
-
-  .navbar-cart img {
-    height: 25px;
-    width: 25px;
+  
+  .navbar-signin {
+    padding: 0.6rem;
   }
-
-  .navbar-search {
-    font-size: 1rem;
+  
+  .navbar-logo span {
+    font-size: 1.2rem;
+  }
+  
+  .navbar-logo img {
+    height: 35px;
   }
 }

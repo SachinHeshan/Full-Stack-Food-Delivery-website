@@ -98,7 +98,7 @@ export const food_list = [
         food_name: "Classic Sandwich",
         price: 8,
         category: "sandwich",
-        description: "Fresh bread with turkey, cheese, and veggies.",
+        description: "",
         rating: 4.3,
         rating_count: 92
     },
@@ -317,3 +317,7 @@ export const remove_icon = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9
 export const logo = "https://img.pikbest.com/png-images/20241111/-22creative-food-logo-collection-for-culinary-brands-22_11079861.png!sw800";
 export const playstore = "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/2560px-Google_Play_Store_badge_EN.svg.png";
 export const appstore = "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Download_on_the_App_Store_Badge.svg/2560px-Download_on_the_App_Store_Badge.svg.png";
+
+ // add icons
+  export  const bag_icon = "https://img.icons8.com/ios-filled/50/000000/shopping-bag.png";
+  export const logout_icon = "https://img.icons8.com/ios-filled/50/000000/logout-rounded.png"

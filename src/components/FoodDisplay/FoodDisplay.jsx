@@ -5,6 +5,10 @@ import Fooditem from '../Fooditem/Fooditem.jsx';
 
 const FoodDisplay = ({ category }) => {
     const { food_list } = useContext(StoreContext);
+    
+    // Debug logging
+    console.log('FoodDisplay - food_list:', food_list);
+    console.log('FoodDisplay - category:', category);
 
 return (
     <div className='food-display' id='food-display'>
@@ -19,10 +23,10 @@ return (
                     <Fooditem
                         key={item._id}  // Always use item._id instead of index for keys
                         id={item._id}
-                        name={item.food_name}
+                        name={item.name}
                         price={item.price}
                         description={item.description}
-                        image={item.food_image}
+                        image={item.image}
                     />
                 ))
             }
