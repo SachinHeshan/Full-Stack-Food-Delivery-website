@@ -3,6 +3,11 @@ import cors from "cors";
 import { connectDB } from "./config/db.js";
 import FoodRouter from "./routes/FoodRouter.js"
 import path from "path";
+import userRouter from "./routes/userRoute.js";
+import cartRouter from "./routes/carRouter.js";
+import dotenv from 'dotenv';
+
+
 
 const app = express();
 const port = 4000;
@@ -22,6 +27,11 @@ app.get("/", (req, res) => res.send("API WORKING"));
 
 // apiend point
 app.use("/api/food", FoodRouter);  // This matches your current setup
+app.use("/api/user",userRouter);
+app.use("/api/cart",cartRouter);
+
+dotenv.config();
+
 
 
 // Start server
